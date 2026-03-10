@@ -48,11 +48,12 @@
                         class="text-primary text-sm ml-1 uppercase">NGON LUÔN</span></span>
             </div>
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
-                <a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+                <a class="hover:text-primary transition-colors" href="#">Trang chủ</a>
                 <a class="text-primary" href="#">Sales</a>
-                <a class="hover:text-primary transition-colors" href="#">Inventory</a>
-                <a class="hover:text-primary transition-colors" href="#">Staff</a>
-                <a class="hover:text-primary transition-colors" href="#">Reports</a>
+                <a class="hover:text-primary transition-colors" href="#">Tin tức</a>
+                <a id="nav-staff-link" class="hover:text-primary transition-colors" href="javascript:void(0)">Nhân
+                    viên</a>
+                <a class="hover:text-primary transition-colors" href="#">Báo cáo</a>
             </nav>
         </div>
         <div class="flex items-center gap-4">
@@ -260,6 +261,9 @@
                         class="px-6 py-2 rounded-md bg-white dark:bg-slate-700 shadow-sm font-semibold text-sm">MENU</button>
                     <button id="tables-button"
                         class="px-6 py-2 rounded-md text-slate-500 dark:text-slate-400 font-semibold text-sm hover:text-primary">TABLES</button>
+                    <button id="staff-button"
+                        class="px-6 py-2 rounded-md text-slate-500 dark:text-slate-400 font-semibold text-sm hover:text-primary">NHÂN
+                        VIÊN</button>
                 </div>
                 <div class="flex-1 relative">
                     <span
@@ -489,6 +493,60 @@
                     </div>
                 </div>
             </div>
+            <div id="staff-view" class="hidden flex-1 overflow-y-auto custom-scrollbar p-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6" id="staff-grid">
+                    <!-- Nhân viên 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm p-4 flex flex-col items-center text-center border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-all cursor-pointer group">
+                        <div class="h-24 w-24 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mb-4">
+                            <img alt="Staff 1" class="w-full h-full object-cover"
+                                src="https://i.pravatar.cc/150?u=nhanvien1" />
+                        </div>
+                        <h3 class="font-bold text-lg">vũ quang minh</h3>
+                        <p class="text-sm text-slate-500">Phục vụ</p>
+                    </div>
+                    <!-- Nhân viên 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm p-4 flex flex-col items-center text-center border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-all cursor-pointer group">
+                        <div class="h-24 w-24 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mb-4">
+                            <img alt="Staff 2" class="w-full h-full object-cover"
+                                src="https://i.pravatar.cc/150?u=nhanvien2" />
+                        </div>
+                        <h3 class="font-bold text-lg">vũ quang minh</h3>
+                        <p class="text-sm text-slate-500">Thu ngân</p>
+                    </div>
+                    <!-- Nhân viên 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm p-4 flex flex-col items-center text-center border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-all cursor-pointer group">
+                        <div class="h-24 w-24 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mb-4">
+                            <img alt="Staff 3" class="w-full h-full object-cover"
+                                src="https://i.pravatar.cc/150?u=nhanvien3" />
+                        </div>
+                        <h3 class="font-bold text-lg">vũ quang minh</h3>
+                        <p class="text-sm text-slate-500">Pha chế</p>
+                    </div>
+                    <!-- Nhân viên 4 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm p-4 flex flex-col items-center text-center border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-all cursor-pointer group">
+                        <div class="h-24 w-24 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mb-4">
+                            <img alt="Staff 4" class="w-full h-full object-cover"
+                                src="https://i.pravatar.cc/150?u=nhanvien4" />
+                        </div>
+                        <h3 class="font-bold text-lg">vũ quang minh</h3>
+                        <p class="text-sm text-slate-500">Phục vụ</p>
+                    </div>
+                    <!-- Nhân viên 5 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm p-4 flex flex-col items-center text-center border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-all cursor-pointer group">
+                        <div class="h-24 w-24 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mb-4">
+                            <img alt="Staff 5" class="w-full h-full object-cover"
+                                src="https://i.pravatar.cc/150?u=nhanvien5" />
+                        </div>
+                        <h3 class="font-bold text-lg">vũ quang minh</h3>
+                        <p class="text-sm text-slate-500">Bảo vệ</p>
+                    </div>
+                </div>
+            </div>
             <div
                 class="p-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 grid grid-cols-4 lg:grid-cols-8 gap-3 shrink-0">
                 <button
@@ -647,6 +705,65 @@
                     addToOrder(name, price, unit);
                 });
             });
+
+            // Chuyển đổi giữa các view (Menu, Bàn, Nhân viên)
+            const menuButton = document.getElementById('menu-button');
+            const tablesButton = document.getElementById('tables-button');
+            const staffButton = document.getElementById('staff-button');
+            const navStaffLink = document.getElementById('nav-staff-link');
+
+            const menuView = document.getElementById('menu-view');
+            const tablesView = document.getElementById('tables-view');
+            const staffView = document.getElementById('staff-view');
+
+            const allViews = [menuView, tablesView, staffView];
+            const allButtons = [menuButton, tablesButton, staffButton];
+
+            function showView(viewToShow, buttonToActivate) {
+                allViews.forEach(view => view.classList.add('hidden'));
+                viewToShow.classList.remove('hidden');
+
+                allButtons.forEach(button => {
+                    button.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow-sm');
+                    button.classList.add('text-slate-500', 'dark:text-slate-400', 'hover:text-primary');
+                });
+                buttonToActivate.classList.add('bg-white', 'dark:bg-slate-700', 'shadow-sm');
+                buttonToActivate.classList.remove('text-slate-500', 'dark:text-slate-400', 'hover:text-primary');
+            }
+
+            menuButton.addEventListener('click', () => showView(menuView, menuButton));
+            tablesButton.addEventListener('click', () => showView(tablesView, tablesButton));
+            staffButton.addEventListener('click', () => showView(staffView, staffButton));
+            navStaffLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showView(staffView, staffButton);
+            });
+
+            // Xử lý trạng thái bàn
+            window.toggleTableStatus = function (tableElement) {
+                const isAvailable = tableElement.dataset.status === 'available';
+                tableElement.dataset.status = isAvailable ? 'occupied' : 'available';
+
+                const icon = tableElement.querySelector('span');
+                const statusText = tableElement.querySelector('p');
+
+                tableElement.classList.toggle('bg-emerald-100', !isAvailable);
+                tableElement.classList.toggle('dark:bg-emerald-900/50', !isAvailable);
+                tableElement.classList.toggle('border-emerald-500', !isAvailable);
+                tableElement.classList.toggle('bg-red-100', isAvailable);
+                tableElement.classList.toggle('dark:bg-red-900/50', isAvailable);
+                tableElement.classList.toggle('border-red-500', isAvailable);
+
+                icon.innerText = isAvailable ? 'person' : 'event_seat';
+                statusText.innerText = isAvailable ? 'Đang phục vụ' : 'Trống';
+
+                [icon, statusText].forEach(el => {
+                    el.classList.toggle('text-emerald-600', !isAvailable);
+                    el.classList.toggle('dark:text-emerald-400', !isAvailable);
+                    el.classList.toggle('text-red-600', isAvailable);
+                    el.classList.toggle('dark:text-red-400', isAvailable);
+                });
+            }
         });
 
         function logout() {
